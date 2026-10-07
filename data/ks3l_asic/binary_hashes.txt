@@ -1,0 +1,10 @@
+a70e38474515f633828ead4455415201  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS0
+ac4d0237ea6f6d40b78819ae3385b9ba  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS0_first
+2c84b128ea36408380dbfdb7e63f9482  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS1
+a3e5c1c6a56594ff51be3231ed40ec97  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS1_oc
+66309b081574191fb919f96309c10758  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS2
+d45f9db57c7daeabbecadc6d1f8a64f7  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS3
+909e955d5737544027cd8d8608c90426  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS3L_fw
+b02f7eb89811cf710f97456d40995651  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS3L_run
+7f2447bca69393d39670aaa9e2f3c41e  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS3M
+f36f8e1de5f559a971736020da033dda  /tmp/claude-0/-home-user-IceRiver-Debug-Research/392c7c1e-b654-528f-8c9c-78cad3fc8681/scratchpad/bins/KS3M_preml

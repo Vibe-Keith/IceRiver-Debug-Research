@@ -1,0 +1,49 @@
+# dispatcher + handler byte-usage per binary
+BIN KS0
+ dispatch@ 0x1181c8 type-byte base=sp off=0x173 handlers {'0x80': '0x118850', '0x81': '0x118b0c', '0x8e': '0x118d84', '0x82': '0x11916a'}
+  80 payload-bytes-read [6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 10]
+BIN KS1
+ dispatch@ 0x1186ba type-byte base=sp off=0x173 handlers {'0x80': '0x118d5c', '0x81': '0x119120', '0x8e': '0x119472', '0x82': '0x11993e'}
+  80 payload-bytes-read [6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 7, 8, 10]
+BIN KS2
+ dispatch@ 0x11868a type-byte base=sp off=0x173 handlers {'0x80': '0x118d2c', '0x81': '0x1190f0', '0x8e': '0x119442', '0x82': '0x11990e'}
+  80 payload-bytes-read [6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 7, 8, 10]
+BIN KS3
+ dispatch@ 0x118b8a type-byte base=sp off=0x19b handlers {'0x80': '0x119266', '0x81': '0x1192f2', '0x8e': '0x1197ba', '0x82': '0x119b70'}
+  80 payload-bytes-read [4, 5, 6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [4, 5, 9, 10]
+  8E payload-bytes-read [2, 3, 7, 8, 10]
+BIN KS3L_run
+ dispatch@ 0x1189ea type-byte base=sp off=0x16b handlers {'0x80': '0x118e88', '0x81': '0x118eee', '0x8e': '0x1194a8', '0x82': '0x119e80'}
+  80 payload-bytes-read [4, 5, 6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 10]
+BIN KS3L_fw
+ dispatch@ 0x118b86 type-byte base=sp off=0x173 handlers {'0x80': '0x1191b8', '0x81': '0x119228', '0x8e': '0x119830', '0x82': '0x119cd0'}
+  80 payload-bytes-read [4, 5, 6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 7, 8, 10]
+BIN KS3M
+ dispatch@ 0x118b8e type-byte base=sp off=0x173 handlers {'0x80': '0x1191c0', '0x81': '0x119230', '0x8e': '0x119838', '0x82': '0x119cd8'}
+  80 payload-bytes-read [4, 5, 6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 7, 8, 10]
+BIN KS3M_preml
+ dispatch@ 0x118ae0 type-byte base=sp off=0x173 handlers {'0x80': '0x118f4a', '0x81': '0x118fb0', '0x8e': '0x119520', '0x82': '0x119e54'}
+  80 payload-bytes-read [4, 5, 6, 7, 8, 9, 10]
+  81 payload-bytes-read [7, 8, 9, 10]
+  82 payload-bytes-read [5, 9, 10]
+  8E payload-bytes-read [2, 3, 10]
