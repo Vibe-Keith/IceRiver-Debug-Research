@@ -1,0 +1,340 @@
+118834: vldr    d10, [pc, #0x210]            
+118838: ldr     r7, [sp, #0x78]              
+11883a: vldr    d8, [pc, #0x214]             
+11883e: vldr    d9, [pc, #0x218]             
+118842: mov     r0, r4                       
+118844: bl      #0x11c290                    
+118848: cmp     r0, #0xc                     
+11884a: bls     #0x1188a0                    
+11884c: ldr.w   r3, [sb, #0x9a4]             
+118850: movs    r2, #1                       
+118852: add     r1, sp, #0x160               
+118854: mov     r0, r4                       
+118856: add     r3, r2                       
+118858: str.w   r3, [sb, #0x9a4]             
+11885c: bl      #0x11c0ec                    
+118860: ldrb.w  r3, [sp, #0x160]             
+118864: cmp     r3, #0x55                    
+118866: bne.w   #0x1189a0                    
+11886a: movs    r2, #1                       
+11886c: addw    r1, sp, #0x161               
+118870: mov     r0, r4                       
+118872: bl      #0x11c0ec                    
+118876: ldrb.w  r3, [sp, #0x161]             
+11887a: cmp     r3, #0x7f                    
+11887c: beq.w   #0x1189b8                    
+118880: ldr.w   r3, [sb, #0x99c]             
+118884: movw    r0, #0xb8c                   
+118888: movt    r0, #0x18                    -> 180b8c 'not 7f'
+11888c: adds    r3, #1                       
+11888e: str.w   r3, [sb, #0x99c]             
+118892: blx     #0x125b4                     puts
+118896: mov     r0, r4                       
+118898: bl      #0x11c290                    
+11889c: cmp     r0, #0xc                     
+11889e: bhi     #0x11884c                    
+1188a0: ldrd    r2, r3, [sp, #0xa8]          
+1188a4: mov     r0, r2                       
+1188a6: mov     r1, r3                       
+1188a8: strd    r2, r3, [sp, #0x68]          
+1188ac: orrs.w  r3, r0, r1                   
+1188b0: beq     #0x1188c8                    
+1188b2: movw    sl, #0x8de8                  
+1188b6: movt    sl, #0x19                    -> 198de8 
+1188ba: ldrd    r2, r3, [sl, #0x100]         
+1188be: cmp     r3, r1                       
+1188c0: it      eq                           
+1188c2: cmpeq   r2, r0                       
+1188c4: bne.w   #0x118a8e                    
+1188c8: add.w   r8, r8, #1                   
+1188cc: adds    r4, #0x14                    
+1188ce: cmp.w   r8, #4                       
+1188d2: bne     #0x11883a                    
+1188d4: movw    r0, #0x1388                  
+1188d8: blx     #0x12a6c                     usleep
+1188dc: b       #0x1184de                    
+1188de: movw    r0, #0x1b8                   
+1188e2: movt    r0, #0x18                    -> 1801b8 'init first'
+1188e6: blx     #0x125b4                     puts
+1188ea: movs    r1, #0                       
+1188ec: movw    r0, #0x3c9                   
+1188f0: bl      #0x12a0b0                    
+1188f4: movs    r1, #0                       
+1188f6: movs    r3, #8                       
+1188f8: mov.w   r2, #0x5a00                  
+1188fc: str     r3, [sp]                     
+1188fe: movt    r2, #0x262                   
+118902: movs    r3, #0xc                     
+118904: mov     r0, r1                       
+118906: bl      #0x116ecc                    
+11890a: movs    r1, #0                       
+11890c: mov     r6, r0                       
+11890e: mov.w   r0, #0x3d0                   
+118912: bl      #0x12a0b0                    
+118916: movs    r1, #0                       
+118918: movw    r0, #0x3d1                   
+11891c: bl      #0x12a0b0                    
+118920: movs    r1, #0                       
+118922: movw    r0, #0x3d2                   
+118926: bl      #0x12a0b0                    
+11892a: movs    r1, #0                       
+11892c: movw    r0, #0x3d3                   
+118930: bl      #0x12a0b0                    
+118934: mov     r0, r6                       
+118936: bl      #0x11cc80                    
+11893a: mov.w   r0, #0x3e8                   
+11893e: blx     #0x12a6c                     usleep
+118942: ldr     r2, [sp, #0x70]              
+118944: movs    r3, #0                       
+118946: str     r6, [r2, #0x10]              
+118948: strb    r3, [r2, #0xc]               
+11894a: movw    sb, #0x7cf0                  
+11894e: movs    r3, #1                       
+118950: movt    sb, #0x19                    -> 197cf0 
+118954: movs    r2, #0x50                    
+118956: add.w   r1, sb, #0x198               
+11895a: add.w   r0, sb, #0x1ec               
+11895e: strb.w  r3, [sb, #0x1e8]             
+118962: blx     #0x12a1c                     memcpy
+118966: movw    r1, #0xe950                  
+11896a: movw    r0, #0xf950                  
+11896e: movt    r1, #0x19                    -> 19e950 
+118972: mov.w   r2, #0x1000                  
+118976: movt    r0, #0x19                    -> 19f950 
+11897a: blx     #0x12a1c                     memcpy
+11897e: movw    r1, #0xe950                  
+118982: add     r0, sp, #0x110               
+118984: movt    r1, #0x19                    -> 19e950 
+118988: bl      #0x1155fc                    
+11898c: b       #0x1182c0                    
+11898e: ldr     r3, [r6]                     
+118990: cmp     r3, #0                       
+118992: beq.w   #0x1183c0                    
+118996: movw    sb, #0x7cf0                  
+11899a: movt    sb, #0x19                    -> 197cf0 
+11899e: b       #0x1182ee                    
+1189a0: ldr.w   r3, [sb, #0x9a0]             
+1189a4: movw    r0, #0x898                   
+1189a8: movt    r0, #0x18                    -> 180898 'no 55'
+1189ac: adds    r3, #1                       
+1189ae: str.w   r3, [sb, #0x9a0]             
+1189b2: blx     #0x125b4                     puts
+1189b6: b       #0x118842                    
+1189b8: movs    r2, #0xb                     
+1189ba: add.w   r1, sp, #0x162               
+1189be: mov     r0, r4                       
+1189c0: bl      #0x11c0ec                    
+1189c4: cmp     r0, #0                       
+1189c6: beq.w   #0x118842                    
+1189ca: ldr     r3, [r7]                     
+1189cc: cmp     r3, #0                       
+1189ce: bne     #0x118a6c                    
+1189d0: ldrb.w  r5, [sp, #0x16c]             
+1189d4: movs    r1, #0xc                     
+1189d6: add     r0, sp, #0x160               
+1189d8: bl      #0x11c660                    
+1189dc: cmp     r5, r0                       
+1189de: bne     #0x118a12                    
+1189e0: ldrb.w  r2, [sp, #0x16b]             
+1189e4: lsls    r5, r2, #0x18                
+1189e6: bpl.w   #0x11a1d8                    
+1189ea: cmp     r2, #0x80                    
+1189ec: beq.w   #0x118e88                    
+1189f0: cmp     r2, #0x81                    
+1189f2: beq.w   #0x118eee                    
+1189f6: cmp     r2, #0x8e                    
+1189f8: beq.w   #0x1194a8                    
+1189fc: cmp     r2, #0x82                    
+1189fe: beq.w   #0x119e80                    
+118a02: movw    r1, #0xb64                   
+118a06: movs    r0, #6                       
+118a08: movt    r1, #0x18                    -> 180b64 'unknown command: %02X'
+118a0c: bl      #0x117c30                    
+118a10: b       #0x118842                    
+118a12: movw    r0, #0xb7c                   
+118a16: movt    r0, #0x18                    -> 180b7c 'checksum error!'
+118a1a: blx     #0x125b4                     puts
+118a1e: movw    r3, #0x9ee0                  
+118a22: ldr.w   r1, [sb, #0x9a8]             
+118a26: movt    r3, #0x19                    -> 199ee0 
+118a2a: ldr.w   r2, [r3, #0x404]             
+118a2e: adds    r1, #1                       
+118a30: str.w   r1, [sb, #0x9a8]             
+118a34: adds    r2, #1                       
+118a36: str.w   r2, [r3, #0x404]             
+118a3a: b       #0x118842                    
+118a3c: nop.w                                
+118a40: b       #0x1185d6                    
+118a42: adr     r4, #0xfc                    
+118a44: bkpt    #0xdf                        
+118a46: subs    r7, #0xce                    
+118a48: movs    r0, r0                       
+118a4a: movs    r0, r0                       
+118a4c: str     r0, [sp]                     
+118a4e: eors    r3, r5                       
+118a50: strh    r7, [r3, #0x28]              
+118a52: str     r3, [r5, r7]                 
+118a54: udf     #0xb8                        
+118a56: eors    r4, r0                       
+118a58: movs    r0, r0                       
+118a5a: movs    r0, r0                       
+118a5c: .byte   0x00, 0xc0                   
+118a5e: eors    r2, r2                       
+118a60: ldrb    r0, [r6, #0x1a]              
+118a62: movs    r1, r3                       
+118a64: ldrb    r0, [r3, #0x1e]              
+118a66: movs    r1, r3                       
+118a68: ldrb    r0, [r6, #0x1c]              
+118a6a: movs    r1, r3                       
+118a6c: movw    r0, #0x8a0                   
+118a70: add.w   r1, r8, #1                   
+118a74: movt    r0, #0x18                    -> 1808a0 
+118a78: blx     #0x12578                     printf
+118a7c: movw    r0, #0x8b8                   
+118a80: movs    r2, #0xd                     
+118a82: add     r1, sp, #0x160               
+118a84: movt    r0, #0x18                    -> 1808b8 'bf----'
+118a88: bl      #0x11c804                    
+118a8c: b       #0x1189d0                    
+118a8e: mov     r5, r0                       
+118a90: mov     r6, r1                       
+118a92: movs    r2, #0x50                    
+118a94: ldr     r1, [pc, #0x34c]             
+118a96: add     r0, sp, #0x110               
+118a98: strd    r5, r6, [sl, #0x100]         
+118a9c: blx     #0x12a1c                     memcpy
+118aa0: add     r3, sp, #0xa8                
+118aa2: ldr     r5, [sp, #0x80]              
+118aa4: ldm.w   r3, {r0, r1}                 
+118aa8: add     r6, sp, #0x158               
+118aaa: movs    r2, #0x50                    
+118aac: adds    r5, #1                       
+118aae: stm.w   r6, {r0, r1}                 
+118ab2: movw    r0, #0xb94                   
+118ab6: add     r1, sp, #0x110               
+118ab8: movt    r0, #0x18                    -> 180b94 'hh----'
+118abc: str     r5, [sp, #0x80]              
+118abe: bl      #0x11c804                    
+118ac2: movs    r2, #0x20                    
+118ac4: movs    r1, #0                       
+118ac6: add     r0, sp, #0xd0                
+118ac8: blx     #0x12640                     memset
+118acc: mov.w   r0, #0x3e8                   
+118ad0: blx     #0x12a6c                     usleep
+118ad4: movw    r1, #0xe950                  
+118ad8: add     r2, sp, #0xd0                
+118ada: movt    r1, #0x19                    -> 19e950 
+118ade: add     r0, sp, #0x110               
+118ae0: bl      #0x1156e8                    
+118ae4: movw    r0, #0xb9c                   
+118ae8: mov     r1, r5                       
+118aea: movt    r0, #0x18                    -> 180b9c 
+118aee: blx     #0x12578                     printf
+118af2: movw    r0, #0xbac                   
+118af6: add     r1, sp, #0xd0                
+118af8: movs    r2, #0x20                    
+118afa: movt    r0, #0x18                    -> 180bac 'hash32='
+118afe: bl      #0x11c804                    
+118b02: ldrb.w  r3, [sp, #0xd0]              
+118b06: movw    r0, #0xbb4                   
+118b0a: ldrb.w  r1, [sp, #0xef]              
+118b0e: movt    r0, #0x18                    -> 180bb4 '--hash32='
+118b12: ldrb.w  r2, [sp, #0xd1]              
+118b16: strb.w  r3, [sp, #0xef]              
+118b1a: ldrb.w  r3, [sp, #0xee]              
+118b1e: strb.w  r1, [sp, #0xd0]              
+118b22: ldrb.w  r1, [sp, #0xd2]              
+118b26: strb.w  r3, [sp, #0xd1]              
+118b2a: ldrb.w  r3, [sp, #0xed]              
+118b2e: strb.w  r2, [sp, #0xee]              
+118b32: ldrb.w  r2, [sp, #0xd3]              
+118b36: strb.w  r3, [sp, #0xd2]              
+118b3a: ldrb.w  r3, [sp, #0xec]              
+118b3e: strb.w  r1, [sp, #0xed]              
+118b42: ldrb.w  r1, [sp, #0xd4]              
+118b46: strb.w  r3, [sp, #0xd3]              
+118b4a: ldrb.w  r3, [sp, #0xeb]              
+118b4e: strb.w  r2, [sp, #0xec]              
+118b52: ldrb.w  r2, [sp, #0xd5]              
+118b56: strb.w  r3, [sp, #0xd4]              
+118b5a: ldrb.w  r3, [sp, #0xea]              
+118b5e: strb.w  r1, [sp, #0xeb]              
+118b62: strb.w  r2, [sp, #0xea]              
+118b66: strb.w  r3, [sp, #0xd5]              
+118b6a: ldrb.w  r3, [sp, #0xe9]              
+118b6e: ldrb.w  r1, [sp, #0xd6]              
+118b72: ldrb.w  r2, [sp, #0xd7]              
+118b76: strb.w  r3, [sp, #0xd6]              
+118b7a: ldrb.w  r3, [sp, #0xe8]              
+118b7e: strb.w  r1, [sp, #0xe9]              
+118b82: add     r1, sp, #0xd0                
+118b84: strb.w  r2, [sp, #0xe8]              
+118b88: strb.w  r3, [sp, #0xd7]              
+118b8c: ldrb.w  r5, [sp, #0xd8]              
+118b90: ldrb.w  r3, [sp, #0xe7]              
+118b94: ldrb.w  r2, [sp, #0xd9]              
+118b98: strb.w  r5, [sp, #0xe7]              
+118b9c: strb.w  r3, [sp, #0xd8]              
+118ba0: ldrb.w  r3, [sp, #0xe6]              
+118ba4: strb.w  r2, [sp, #0xe6]              
+118ba8: ldrb.w  r2, [sp, #0xda]              
+118bac: strb.w  r3, [sp, #0xd9]              
+118bb0: ldrb.w  r3, [sp, #0xe5]              
+118bb4: strb.w  r2, [sp, #0xe5]              
+118bb8: ldrb.w  r2, [sp, #0xdb]              
+118bbc: strb.w  r3, [sp, #0xda]              
+118bc0: ldrb.w  r3, [sp, #0xe4]              
+118bc4: strb.w  r2, [sp, #0xe4]              
+118bc8: ldrb.w  r2, [sp, #0xdc]              
+118bcc: strb.w  r3, [sp, #0xdb]              
+118bd0: ldrb.w  r3, [sp, #0xe3]              
+118bd4: strb.w  r2, [sp, #0xe3]              
+118bd8: ldrb.w  r2, [sp, #0xdd]              
+118bdc: strb.w  r3, [sp, #0xdc]              
+118be0: ldrb.w  r3, [sp, #0xe2]              
+118be4: strb.w  r2, [sp, #0xe2]              
+118be8: ldrb.w  r2, [sp, #0xde]              
+118bec: strb.w  r3, [sp, #0xdd]              
+118bf0: ldrb.w  r3, [sp, #0xe1]              
+118bf4: strb.w  r2, [sp, #0xe1]              
+118bf8: ldrb.w  r2, [sp, #0xdf]              
+118bfc: strb.w  r3, [sp, #0xde]              
+118c00: ldrb.w  r3, [sp, #0xe0]              
+118c04: strb.w  r2, [sp, #0xe0]              
+118c08: movs    r2, #0x20                    
+118c0a: strb.w  r3, [sp, #0xdf]              
+118c0e: bl      #0x11c804                    
+118c12: ldrb.w  r2, [sp, #0xd0]              
+118c16: movs    r3, #0                       
+118c18: strd    r3, r3, [sp, #0xbc]          
+118c1c: cmp     r2, #0                       
+118c1e: bne.w   #0x119668                    
+118c22: ldrb.w  r3, [sp, #0xd1]              
+118c26: cmp     r3, #0                       
+118c28: bne.w   #0x1196de                    
+118c2c: ldrb.w  r3, [sp, #0xd2]              
+118c30: cmp     r3, #0                       
+118c32: bne.w   #0x119780                    
+118c36: ldrb.w  r3, [sp, #0xd3]              
+118c3a: cmp     r3, #0                       
+118c3c: bne.w   #0x11995a                    
+118c40: ldrb.w  r3, [sp, #0xd4]              
+118c44: cmp     r3, #0                       
+118c46: bne.w   #0x119b12                    
+118c4a: ldrb.w  r3, [sp, #0xd5]              
+118c4e: cmp     r3, #0                       
+118c50: bne.w   #0x119bec                    
+118c54: ldrb.w  r3, [sp, #0xd6]              
+118c58: cmp     r3, #0                       
+118c5a: bne.w   #0x119c98                    
+118c5e: ldrb.w  r3, [sp, #0xd7]              
+118c62: cmp     r3, #0                       
+118c64: bne.w   #0x119df8                    
+118c68: movs    r3, #0x40                    
+118c6a: ldrb.w  r2, [sp, #0xb4]              
+118c6e: str     r2, [sp, #0x74]              
+118c70: cmp     r2, #0                       
+118c72: bne.w   #0x119578                    
+118c76: ldrb.w  r2, [sp, #0xb5]              
+118c7a: cmp     r2, #0                       
+118c7c: bne.w   #0x1196a8                    

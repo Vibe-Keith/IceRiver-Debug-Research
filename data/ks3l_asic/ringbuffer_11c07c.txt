@@ -1,0 +1,233 @@
+11c07c: push.w  {r4, r5, r6, r7, r8, lr}     
+11c080: push    {lr}                         
+11c082: blx     #0x129c4                     __gnu_mcount_nc
+11c086: ldr     r5, [r0, #8]                 
+11c088: mov     r6, r2                       
+11c08a: mov     r7, r1                       
+11c08c: ldr     r3, [r0, #0x10]              
+11c08e: add     r5, r2                       
+11c090: cmp     r5, r3                       
+11c092: it      hi                           
+11c094: movhi   r0, #0                       
+11c096: bhi     #0x11c0c6                    
+11c098: mov     r4, r0                       
+11c09a: ldr     r0, [r0, #4]                 
+11c09c: subs    r5, r3, r0                   
+11c09e: ldr     r3, [r4, #0xc]               
+11c0a0: cmp     r5, r2                       
+11c0a2: add     r0, r3                       
+11c0a4: bhs     #0x11c0ca                    
+11c0a6: sub.w   r8, r2, r5                   
+11c0aa: mov     r2, r5                       
+11c0ac: blx     #0x12a1c                     memcpy
+11c0b0: mov     r2, r8                       
+11c0b2: adds    r1, r7, r5                   
+11c0b4: ldr     r0, [r4, #0xc]               
+11c0b6: blx     #0x12a1c                     memcpy
+11c0ba: ldr     r2, [r4, #8]                 
+11c0bc: movs    r0, #1                       
+11c0be: str.w   r8, [r4, #4]                 
+11c0c2: add     r2, r6                       
+11c0c4: str     r2, [r4, #8]                 
+11c0c6: pop.w   {r4, r5, r6, r7, r8, pc}     
+11c0ca: blx     #0x12a1c                     memcpy
+11c0ce: ldrd    r2, r3, [r4, #4]             
+11c0d2: ldr     r1, [r4, #0x10]              
+11c0d4: add     r2, r6                       
+11c0d6: add     r3, r6                       
+11c0d8: cmp     r2, r1                       
+11c0da: strd    r2, r3, [r4, #4]             
+11c0de: ittte   eq                           
+11c0e0: moveq   r3, #0                       
+11c0e2: moveq   r0, #1                       
+11c0e4: streq   r3, [r4, #4]                 
+11c0e6: movne   r0, #1                       
+11c0e8: pop.w   {r4, r5, r6, r7, r8, pc}     
+11c0ec: push    {r3, r4, r5, r6, r7, lr}     
+11c0ee: push    {lr}                         
+11c0f0: blx     #0x129c4                     __gnu_mcount_nc
+11c0f4: ldr     r4, [r0, #8]                 
+11c0f6: mov     r6, r2                       
+11c0f8: cmp     r4, r2                       
+11c0fa: it      lo                           
+11c0fc: movlo   r0, #0                       
+11c0fe: blo     #0x11c130                    
+11c100: mov     r4, r0                       
+11c102: mov     r3, r1                       
+11c104: ldr     r0, [r0]                     
+11c106: ldrd    r1, r5, [r4, #0xc]           
+11c10a: subs    r5, r5, r0                   
+11c10c: add     r1, r0                       
+11c10e: cmp     r5, r2                       
+11c110: bhs     #0x11c132                    
+11c112: subs    r7, r2, r5                   
+11c114: mov     r0, r3                       
+11c116: mov     r2, r5                       
+11c118: blx     #0x12a1c                     memcpy
+11c11c: mov     r2, r7                       
+11c11e: add     r0, r5                       
+11c120: ldr     r1, [r4, #0xc]               
+11c122: blx     #0x12a1c                     memcpy
+11c126: ldr     r2, [r4, #8]                 
+11c128: movs    r0, #1                       
+11c12a: str     r7, [r4]                     
+11c12c: subs    r2, r2, r6                   
+11c12e: str     r2, [r4, #8]                 
+11c130: pop     {r3, r4, r5, r6, r7, pc}     
+11c132: mov     r0, r3                       
+11c134: blx     #0x12a1c                     memcpy
+11c138: ldr     r2, [r4]                     
+11c13a: ldr     r3, [r4, #8]                 
+11c13c: ldr     r1, [r4, #0x10]              
+11c13e: add     r2, r6                       
+11c140: subs    r3, r3, r6                   
+11c142: str     r2, [r4]                     
+11c144: cmp     r2, r1                       
+11c146: str     r3, [r4, #8]                 
+11c148: ittte   eq                           
+11c14a: moveq   r3, #0                       
+11c14c: moveq   r0, #1                       
+11c14e: streq   r3, [r4]                     
+11c150: movne   r0, #1                       
+11c152: pop     {r3, r4, r5, r6, r7, pc}     
+11c154: push    {r4, r5, r6, r7, lr}         
+11c156: sub     sp, #0xc                     
+11c158: push    {lr}                         
+11c15a: blx     #0x129c4                     __gnu_mcount_nc
+11c15e: lsrs    r4, r1, #0x18                
+11c160: movs    r3, #0                       
+11c162: ubfx    r5, r1, #0x10, #8            
+11c166: bfi     r3, r4, #0, #8               
+11c16a: ldr     r4, [r0, #8]                 
+11c16c: bfi     r3, r5, #8, #8               
+11c170: ubfx    r5, r1, #8, #8               
+11c174: bfi     r3, r5, #0x10, #8            
+11c178: ldr     r5, [r0, #0x10]              
+11c17a: bfi     r3, r1, #0x18, #8            
+11c17e: adds    r1, r2, r4                   
+11c180: str     r3, [sp, #4]                 
+11c182: cmp     r1, r5                       
+11c184: it      hi                           
+11c186: movhi   r0, #0                       
+11c188: bhi     #0x11c1c0                    
+11c18a: ldr     r3, [r0, #4]                 
+11c18c: mov     r4, r0                       
+11c18e: ldr     r0, [r0, #0xc]               
+11c190: mov     r6, r2                       
+11c192: subs    r5, r5, r3                   
+11c194: cmp     r2, r5                       
+11c196: add     r0, r3                       
+11c198: bls     #0x11c1c4                    
+11c19a: subs    r7, r2, r5                   
+11c19c: bne     #0x11c1c8                    
+11c19e: mov     r2, r5                       
+11c1a0: add     r1, sp, #4                   
+11c1a2: blx     #0x12a1c                     memcpy
+11c1a6: ldrd    r1, r2, [r4, #4]             
+11c1aa: ldr     r3, [r4, #0x10]              
+11c1ac: add     r5, r1                       
+11c1ae: add     r2, r6                       
+11c1b0: cmp     r5, r3                       
+11c1b2: strd    r5, r2, [r4, #4]             
+11c1b6: itett   eq                           
+11c1b8: moveq   r0, #1                       
+11c1ba: movne   r0, #1                       
+11c1bc: moveq   r3, #0                       
+11c1be: streq   r3, [r4, #4]                 
+11c1c0: add     sp, #0xc                     
+11c1c2: pop     {r4, r5, r6, r7, pc}         
+11c1c4: mov     r5, r2                       
+11c1c6: b       #0x11c19e                    
+11c1c8: add     r1, sp, #4                   
+11c1ca: mov     r2, r5                       
+11c1cc: blx     #0x12a1c                     memcpy
+11c1d0: add     r3, sp, #4                   
+11c1d2: mov     r2, r7                       
+11c1d4: adds    r1, r3, r5                   
+11c1d6: ldr     r0, [r4, #0xc]               
+11c1d8: blx     #0x12a1c                     memcpy
+11c1dc: ldr     r2, [r4, #8]                 
+11c1de: movs    r0, #1                       
+11c1e0: str     r7, [r4, #4]                 
+11c1e2: add     r2, r6                       
+11c1e4: str     r2, [r4, #8]                 
+11c1e6: add     sp, #0xc                     
+11c1e8: pop     {r4, r5, r6, r7, pc}         
+11c1ea: nop                                  
+11c1ec: push.w  {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+11c1f0: sub     sp, #0xc                     
+11c1f2: push    {lr}                         
+11c1f4: blx     #0x129c4                     __gnu_mcount_nc
+11c1f8: add.w   ip, r2, #-1                  
+11c1fc: mov     r8, r0                       
+11c1fe: ldr     r3, [r0, #8]                 
+11c200: lsl.w   ip, ip, #3                   
+11c204: str     r1, [sp]                     
+11c206: lsr.w   ip, r1, ip                   
+11c20a: ldr     r4, [r0]                     
+11c20c: subs    r3, r3, r2                   
+11c20e: adds.w  lr, r3, #1                   
+11c212: uxtb.w  ip, ip                       
+11c216: beq     #0x11c28c                    
+11c218: add.w   r3, r2, #0x20000000          
+11c21c: ldr     r7, [r0, #0xc]               
+11c21e: subs    r3, #1                       
+11c220: movs    r0, #1                       
+11c222: lsls    r3, r3, #3                   
+11c224: add.w   sb, r2, r0                   
+11c228: str     r3, [sp, #4]                 
+11c22a: b       #0x11c240                    
+11c22c: ldr.w   r3, [r8, #0x10]              
+11c230: adds    r4, #1                       
+11c232: adds    r0, #1                       
+11c234: subs    r3, #1                       
+11c236: cmp     r3, r4                       
+11c238: it      lo                           
+11c23a: movlo   r4, #0                       
+11c23c: cmp     lr, r0                       
+11c23e: blo     #0x11c284                    
+11c240: ldrb    r1, [r7, r4]                 
+11c242: cmp     r1, ip                       
+11c244: bne     #0x11c22c                    
+11c246: mov     sl, r2                       
+11c248: cbz     r2, #0x11c278                
+11c24a: ldr.w   r3, [r8, #0x10]              
+11c24e: mov.w   sl, #0                       
+11c252: ldr     r6, [sp, #4]                 
+11c254: movs    r5, #1                       
+11c256: add.w   fp, r3, #-1                  
+11c25a: mov     r3, r4                       
+11c25c: b       #0x11c260                    
+11c25e: ldrb    r1, [r7, r3]                 
+11c260: adds    r3, #1                       
+11c262: adds    r5, #1                       
+11c264: lsls    r1, r6                       
+11c266: cmp     r3, fp                       
+11c268: it      hi                           
+11c26a: movhi   r3, #0                       
+11c26c: cmp     r5, sb                       
+11c26e: orr.w   sl, sl, r1                   
+11c272: sub.w   r6, r6, #8                   
+11c276: bne     #0x11c25e                    
+11c278: ldr     r3, [sp]                     
+11c27a: cmp     r3, sl                       
+11c27c: bne     #0x11c22c                    
+11c27e: add     sp, #0xc                     
+11c280: pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+11c284: movs    r0, #0                       
+11c286: add     sp, #0xc                     
+11c288: pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+11c28c: mov     r0, lr                       
+11c28e: b       #0x11c27e                    
+11c290: push    {lr}                         
+11c292: blx     #0x129c4                     __gnu_mcount_nc
+11c296: ldr     r0, [r0, #8]                 
+11c298: bx      lr                           
+11c29a: nop                                  
+11c29c: push    {lr}                         
+11c29e: blx     #0x129c4                     __gnu_mcount_nc
+11c2a2: ldr     r2, [r0, #0x10]              
+11c2a4: ldr     r0, [r0, #8]                 
+11c2a6: subs    r0, r2, r0                   
+11c2a8: bx      lr                           
+11c2aa: nop                                  

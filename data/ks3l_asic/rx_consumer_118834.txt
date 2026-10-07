@@ -1,0 +1,219 @@
+117e3a: ldr.w   r2, [sb]                     
+117e3e: cmp     r2, #0                       
+117e40: bne.w   #0x117fc4                    
+117e44: movw    fp, #0x7838                  
+117e48: movs    r4, #0                       
+117e4a: movt    fp, #0x13                    -> 137838 '%02x '
+117e4e: cbnz    r2, #0x117e5e                
+117e50: adds    r4, #1                       
+117e52: cmp     r4, r5                       
+117e54: beq     #0x117e8c                    
+117e56: ldr.w   r2, [sb]                     
+117e5a: cmp     r2, #0                       
+117e5c: beq     #0x117e50                    
+117e5e: ldrb    r1, [r7, r4]                 
+117e60: mov     r0, fp                       
+117e62: blx     #0x12578                     printf
+117e66: umull   r1, r2, r4, sl               
+117e6a: movs    r0, #0xa                     
+117e6c: lsrs    r2, r2, #2                   
+117e6e: add.w   r1, r2, r2, lsl #1           
+117e72: add.w   r2, r2, r1, lsl #2           
+117e76: cmp     r4, r2                       
+117e78: bne     #0x117e50                    
+117e7a: ldr.w   r2, [sb]                     
+117e7e: cmp     r2, #0                       
+117e80: beq     #0x117e50                    
+117e82: adds    r4, #1                       
+117e84: blx     #0x12630                     putchar
+117e88: cmp     r4, r5                       
+117e8a: bne     #0x117e56                    
+117e8c: ldr     r3, [sp, #4]                 
+117e8e: add.w   r0, r8, r8, lsl #2           
+117e92: mov     r2, r4                       
+117e94: sub.w   r1, r3, #0x14                
+117e98: add.w   r0, r1, r0, lsl #2           
+117e9c: mov     r1, r7                       
+117e9e: bl      #0x11c07c                    
+117ea2: b       #0x117e24                    
+117ea4: movw    r4, #0x7cf0                  
+117ea8: movs    r2, #1                       
+117eaa: movt    r4, #0x19                    -> 197cf0 
+117eae: ldr.w   r3, [r4, #0x184]             
+117eb2: str.w   r2, [r4, #0x194]             
+117eb6: add     r3, r2                       
+117eb8: str.w   r3, [r4, #0x184]             
+117ebc: movw    r0, #0x86a0                  
+117ec0: movt    r0, #1                       -> 186a0 
+117ec4: blx     #0x12a6c                     usleep
+117ec8: ldr.w   r3, [r4, #0x184]             
+117ecc: cmp.w   r3, #0x3e8                   
+117ed0: bgt.w   #0x118096                    
+117ed4: movw    sl, #0x55e8                  
+117ed8: movt    sl, #0x19                    -> 1955e8 
+117edc: ldr.w   r3, [r4, #0x188]             
+117ee0: cmp.w   r3, #0x3e8                   
+117ee4: bgt.w   #0x118038                    
+117ee8: movw    sb, #0x55e4                  
+117eec: movt    sb, #0x19                    -> 1955e4 
+117ef0: ldr.w   r3, [r4, #0x18c]             
+117ef4: cmp.w   r3, #0x3e8                   
+117ef8: bgt     #0x117fda                    
+117efa: movw    r8, #0x55e0                  
+117efe: movt    r8, #0x19                    -> 1955e0 
+117f02: movw    r0, #0x330                   
+117f06: movt    r0, #0x18                    -> 180330 'FIFO RESET'
+117f0a: blx     #0x125b4                     puts
+117f0e: movs    r1, #1                       
+117f10: mov.w   r0, #0x3e4                   
+117f14: bl      #0x12a0b0                    
+117f18: mov.w   r0, #0x3e8                   
+117f1c: blx     #0x12a6c                     usleep
+117f20: movs    r1, #0                       
+117f22: mov.w   r0, #0x3e4                   
+117f26: bl      #0x12a0b0                    
+117f2a: movs    r0, #0x28                    
+117f2c: blx     #0x12a6c                     usleep
+117f30: movw    r0, #0x33c                   
+117f34: movt    r0, #0x18                    -> 18033c 'Prevent overflow, Jump out'
+117f38: blx     #0x125b4                     puts
+117f3c: movw    r0, #0x358                   
+117f40: ldr.w   r1, [sl]                     
+117f44: movt    r0, #0x18                    -> 180358 
+117f48: blx     #0x12578                     printf
+117f4c: movw    r0, #0x36c                   
+117f50: ldr.w   r1, [sb]                     
+117f54: movt    r0, #0x18                    -> 18036c 
+117f58: blx     #0x12578                     printf
+117f5c: movw    r0, #0x380                   
+117f60: ldr.w   r1, [r8]                     
+117f64: movt    r0, #0x18                    -> 180380 
+117f68: blx     #0x12578                     printf
+117f6c: movw    r3, #0x55dc                  
+117f70: movw    r0, #0x394                   
+117f74: movt    r3, #0x19                    -> 1955dc 
+117f78: movt    r0, #0x18                    -> 180394 
+117f7c: ldr     r1, [r3]                     
+117f7e: blx     #0x12578                     printf
+117f82: movw    r0, #0x3a8                   
+117f86: ldr.w   r1, [r4, #0x184]             
+117f8a: movt    r0, #0x18                    -> 1803a8 
+117f8e: blx     #0x12578                     printf
+117f92: movw    r0, #0x3c0                   
+117f96: ldr.w   r1, [r4, #0x188]             
+117f9a: movt    r0, #0x18                    -> 1803c0 
+117f9e: blx     #0x12578                     printf
+117fa2: movw    r0, #0x3d8                   
+117fa6: ldr.w   r1, [r4, #0x18c]             
+117faa: movt    r0, #0x18                    -> 1803d8 
+117fae: blx     #0x12578                     printf
+117fb2: movw    r0, #0x3f0                   
+117fb6: ldr.w   r1, [r4, #0x190]             
+117fba: movt    r0, #0x18                    -> 1803f0 
+117fbe: blx     #0x12578                     printf
+117fc2: b       #0x117e04                    
+117fc4: movw    r0, #0x408                   
+117fc8: mov     r2, r8                       
+117fca: movt    r0, #0x18                    -> 180408 
+117fce: mov     r1, r5                       
+117fd0: blx     #0x12578                     printf
+117fd4: ldr.w   r2, [sb]                     
+117fd8: b       #0x117e44                    
+117fda: movw    r0, #0x314                   
+117fde: movw    r8, #0x55e0                  
+117fe2: movt    r0, #0x18                    -> 180314 'over 1000 close algoboard3'
+117fe6: movt    r8, #0x19                    -> 1955e0 
+117fea: blx     #0x125b4                     puts
+117fee: movw    r0, #0x314                   
+117ff2: movt    r0, #0x18                    -> 180314 'over 1000 close algoboard3'
+117ff6: blx     #0x125b4                     puts
+117ffa: movw    r0, #0x314                   
+117ffe: movt    r0, #0x18                    -> 180314 'over 1000 close algoboard3'
+118002: blx     #0x125b4                     puts
+118006: movw    r0, #0x314                   
+11800a: movt    r0, #0x18                    -> 180314 'over 1000 close algoboard3'
+11800e: blx     #0x125b4                     puts
+118012: movw    r0, #0x314                   
+118016: movt    r0, #0x18                    -> 180314 'over 1000 close algoboard3'
+11801a: blx     #0x125b4                     puts
+11801e: movs    r1, #0                       
+118020: movw    r0, #0x3de                   
+118024: bl      #0x12a0b0                    
+118028: movs    r3, #0                       
+11802a: movw    r0, #0x2710                  
+11802e: str.w   r3, [r8]                     
+118032: blx     #0x12a6c                     usleep
+118036: b       #0x117f02                    
+118038: movw    r0, #0x2f8                   
+11803c: movw    sb, #0x55e4                  
+118040: movt    r0, #0x18                    -> 1802f8 'over 1000 close algoboard2'
+118044: movt    sb, #0x19                    -> 1955e4 
+118048: blx     #0x125b4                     puts
+11804c: movw    r0, #0x2f8                   
+118050: movt    r0, #0x18                    -> 1802f8 'over 1000 close algoboard2'
+118054: blx     #0x125b4                     puts
+118058: movw    r0, #0x2f8                   
+11805c: movt    r0, #0x18                    -> 1802f8 'over 1000 close algoboard2'
+118060: blx     #0x125b4                     puts
+118064: movw    r0, #0x2f8                   
+118068: movt    r0, #0x18                    -> 1802f8 'over 1000 close algoboard2'
+11806c: blx     #0x125b4                     puts
+118070: movw    r0, #0x2f8                   
+118074: movt    r0, #0x18                    -> 1802f8 'over 1000 close algoboard2'
+118078: blx     #0x125b4                     puts
+11807c: movs    r1, #0                       
+11807e: movw    r0, #0x3dd                   
+118082: bl      #0x12a0b0                    
+118086: movs    r3, #0                       
+118088: movw    r0, #0x2710                  
+11808c: str.w   r3, [sb]                     
+118090: blx     #0x12a6c                     usleep
+118094: b       #0x117ef0                    
+118096: movw    r0, #0x2dc                   
+11809a: movw    sl, #0x55e8                  
+11809e: movt    r0, #0x18                    -> 1802dc 'over 1000 close algoboard1'
+1180a2: movt    sl, #0x19                    -> 1955e8 
+1180a6: blx     #0x125b4                     puts
+1180aa: movw    r0, #0x2dc                   
+1180ae: movt    r0, #0x18                    -> 1802dc 'over 1000 close algoboard1'
+1180b2: blx     #0x125b4                     puts
+1180b6: movw    r0, #0x2dc                   
+1180ba: movt    r0, #0x18                    -> 1802dc 'over 1000 close algoboard1'
+1180be: blx     #0x125b4                     puts
+1180c2: movw    r0, #0x2dc                   
+1180c6: movt    r0, #0x18                    -> 1802dc 'over 1000 close algoboard1'
+1180ca: blx     #0x125b4                     puts
+1180ce: movw    r0, #0x2dc                   
+1180d2: movt    r0, #0x18                    -> 1802dc 'over 1000 close algoboard1'
+1180d6: blx     #0x125b4                     puts
+1180da: movs    r1, #0                       
+1180dc: mov.w   r0, #0x3dc                   
+1180e0: bl      #0x12a0b0                    
+1180e4: movs    r3, #0                       
+1180e6: movw    r0, #0x2710                  
+1180ea: str.w   r3, [sl]                     
+1180ee: blx     #0x12a6c                     usleep
+1180f2: b       #0x117edc                    
+1180f4: movw    r4, #0x7cf0                  
+1180f8: movs    r2, #1                       
+1180fa: movt    r4, #0x19                    -> 197cf0 
+1180fe: ldr.w   r3, [r4, #0x188]             
+118102: str.w   r2, [r4, #0x194]             
+118106: add     r3, r2                       
+118108: str.w   r3, [r4, #0x188]             
+11810c: b       #0x117ebc                    
+11810e: movw    r4, #0x7cf0                  
+118112: movs    r2, #1                       
+118114: movt    r4, #0x19                    -> 197cf0 
+118118: ldr.w   r3, [r4, #0x18c]             
+11811c: str.w   r2, [r4, #0x194]             
+118120: add     r3, r2                       
+118122: str.w   r3, [r4, #0x18c]             
+118126: b       #0x117ebc                    
+118128: movw    r4, #0x7cf0                  
+11812c: movs    r2, #1                       
+11812e: movt    r4, #0x19                    -> 197cf0 
+118132: ldr.w   r3, [r4, #0x190]             
+118136: str.w   r2, [r4, #0x194]             
+11813a: add     r3, r2                       
+11813c: str.w   r3, [r4, #0x190]             
