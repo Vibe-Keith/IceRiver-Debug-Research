@@ -1,0 +1,427 @@
+ {
+  #address-cells = 00000001
+  #size-cells = 00000001
+  compatible = 'xlnx,zynq-7000'
+  cpus {
+    #address-cells = 00000001
+    #size-cells = ''
+    cpu@0 {
+      compatible = 'arm,cortex-a9'
+      device_type = 'cpu'
+      reg = ''
+      clocks = 00000001 00000003
+      clock-latency = 000003e8
+      cpu0-supply = 00000002
+      operating-points = 000a2c2a 000f4240 00051615 000f4240
+    }
+    cpu@1 {
+      compatible = 'arm,cortex-a9'
+      device_type = 'cpu'
+      reg = 00000001
+      clocks = 00000001 00000003
+    }
+  }
+  fpga-full {
+    compatible = 'fpga-region'
+    fpga-mgr = 00000003
+    #address-cells = 00000001
+    #size-cells = 00000001
+    ranges = 
+  }
+  pmu@f8891000 {
+    compatible = 'arm,cortex-a9-pmu'
+    interrupts = 00000000 00000005 00000004 00000000 00000006 00000004
+    interrupt-parent = 00000004
+    reg = f8891000 00001000 f8893000 00001000
+  }
+  fixedregulator {
+    compatible = 'regulator-fixed'
+    regulator-name = 'VCCPINT'
+    regulator-min-microvolt = 000f4240
+    regulator-max-microvolt = 000f4240
+    regulator-boot-on = 
+    regulator-always-on = 
+    phandle = 00000002
+  }
+  amba {
+    u-boot,dm-pre-reloc = 
+    compatible = 'simple-bus'
+    #address-cells = 00000001
+    #size-cells = 00000001
+    interrupt-parent = 00000004
+    ranges = 
+    adc@f8007100 {
+      compatible = 'xlnx,zynq-xadc-1.00.a'
+      reg = f8007100 00000020
+      interrupts = 00000000 00000007 00000004
+      interrupt-parent = 00000004
+      clocks = 00000001 0000000c
+    }
+    can@e0008000 {
+      compatible = 'xlnx,zynq-can-1.0'
+      status = 'disabled'
+      clocks = 00000001 00000013 00000001 00000024
+      clock-names = 'can_clk\x00pclk'
+      reg = e0008000 00001000
+      interrupts = 00000000 0000001c 00000004
+      interrupt-parent = 00000004
+      tx-fifo-depth = 00000040
+      rx-fifo-depth = 00000040
+    }
+    can@e0009000 {
+      compatible = 'xlnx,zynq-can-1.0'
+      status = 'disabled'
+      clocks = 00000001 00000014 00000001 00000025
+      clock-names = 'can_clk\x00pclk'
+      reg = e0009000 00001000
+      interrupts = 00000000 00000033 00000004
+      interrupt-parent = 00000004
+      tx-fifo-depth = 00000040
+      rx-fifo-depth = 00000040
+    }
+    gpio@e000a000 {
+      compatible = 'xlnx,zynq-gpio-1.0'
+      #gpio-cells = 00000002
+      clocks = 00000001 0000002a
+      gpio-controller = 
+      interrupt-controller = 
+      #interrupt-cells = 00000002
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000014 00000004
+      reg = e000a000 00001000
+      emio-gpio-width = 00000040
+      gpio-mask-high = ''
+      gpio-mask-low = '\x00\x00V'
+    }
+    i2c@e0004000 {
+      compatible = 'cdns,i2c-r1p10'
+      status = 'okay'
+      clocks = 00000001 00000026
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000019 00000004
+      reg = e0004000 00001000
+      #address-cells = 00000001
+      #size-cells = ''
+      clock-frequency = 00061a80
+    }
+    i2c@e0005000 {
+      compatible = 'cdns,i2c-r1p10'
+      status = 'okay'
+      clocks = 00000001 00000027
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000030 00000004
+      reg = e0005000 00001000
+      #address-cells = 00000001
+      #size-cells = ''
+      clock-frequency = 00061a80
+    }
+    interrupt-controller@f8f01000 {
+      compatible = 'arm,cortex-a9-gic'
+      #interrupt-cells = 00000003
+      interrupt-controller = 
+      reg = f8f01000 00001000 f8f00100 00000100
+      num_cpus = 00000002
+      num_interrupts = 00000060
+      phandle = 00000004
+    }
+    cache-controller@f8f02000 {
+      compatible = 'arm,pl310-cache'
+      reg = f8f02000 00001000
+      interrupts = 00000000 00000002 00000004
+      arm,data-latency = 00000003 00000002 00000002
+      arm,tag-latency = 00000002 00000002 00000002
+      cache-unified = 
+      cache-level = 00000002
+    }
+    memory-controller@f8006000 {
+      compatible = 'xlnx,zynq-ddrc-a05'
+      reg = f8006000 00001000
+    }
+    ocmc@f800c000 {
+      compatible = 'xlnx,zynq-ocmc-1.0'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000003 00000004
+      reg = f800c000 00001000
+    }
+    serial@e0000000 {
+      compatible = 'xlnx,xuartps\x00cdns,uart-r1p8'
+      status = 'okay'
+      clocks = 00000001 00000017 00000001 00000028
+      clock-names = 'uart_clk\x00pclk'
+      reg = e0000000 00001000
+      interrupts = 00000000 0000001b 00000004
+      cts-override = 
+      device_type = 'serial'
+      port-number = 00000001
+    }
+    serial@e0001000 {
+      compatible = 'xlnx,xuartps\x00cdns,uart-r1p8'
+      status = 'okay'
+      clocks = 00000001 00000018 00000001 00000029
+      clock-names = 'uart_clk\x00pclk'
+      reg = e0001000 00001000
+      interrupts = 00000000 00000032 00000004
+      cts-override = 
+      device_type = 'serial'
+      port-number = ''
+    }
+    spi@e0006000 {
+      compatible = 'xlnx,zynq-spi-r1p6'
+      reg = e0006000 00001000
+      status = 'okay'
+      interrupt-parent = 00000004
+      interrupts = 00000000 0000001a 00000004
+      clocks = 00000001 00000019 00000001 00000022
+      clock-names = 'ref_clk\x00pclk'
+      #address-cells = 00000001
+      #size-cells = ''
+      is-decoded-cs = ''
+      num-cs = 00000003
+    }
+    spi@e0007000 {
+      compatible = 'xlnx,zynq-spi-r1p6'
+      reg = e0007000 00001000
+      status = 'okay'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000031 00000004
+      clocks = 00000001 0000001a 00000001 00000023
+      clock-names = 'ref_clk\x00pclk'
+      #address-cells = 00000001
+      #size-cells = ''
+      is-decoded-cs = ''
+      num-cs = 00000003
+    }
+    spi@e000d000 {
+      clock-names = 'ref_clk\x00pclk'
+      clocks = 00000001 0000000a 00000001 0000002b
+      compatible = 'xlnx,zynq-qspi-1.0'
+      status = 'disabled'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000013 00000004
+      reg = e000d000 00001000
+      #address-cells = 00000001
+      #size-cells = ''
+    }
+    memory-controller@e000e000 {
+      #address-cells = 00000001
+      #size-cells = 00000001
+      status = 'okay'
+      clock-names = 'memclk\x00apb_pclk'
+      clocks = 00000001 0000000b 00000001 0000002c
+      compatible = 'arm,pl353-smc-r2p1\x00arm,primecell'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000012 00000004
+      ranges = 
+      reg = e000e000 00001000
+      flash@e1000000 {
+        status = 'okay'
+        compatible = 'arm,pl353-nand-r2p1'
+        reg = e1000000 01000000
+        #address-cells = 00000001
+        #size-cells = 00000001
+        arm,nand-cycle-t0 = 00000003
+        arm,nand-cycle-t1 = 00000003
+        arm,nand-cycle-t2 = ''
+        arm,nand-cycle-t3 = 00000001
+        arm,nand-cycle-t4 = 00000001
+        arm,nand-cycle-t5 = 00000001
+        arm,nand-cycle-t6 = 00000002
+        nand-bus-width = 00000008
+        partition@0x00000000 {
+          label = 'boot'
+          reg = '\x00\x00\x00\x00\x00@'
+        }
+        partition@0x00400000 {
+          label = 'bootenv'
+          reg = 00400000 00020000
+        }
+        partition@0x00420000 {
+          label = 'kernel'
+          reg = 00420000 00b00000
+        }
+        partition@0x00f20000 {
+          label = 'jffs2'
+          reg = 00f20000 06e00000
+        }
+      }
+      flash@e2000000 {
+        status = 'disabled'
+        compatible = 'cfi-flash'
+        reg = e2000000 02000000
+        #address-cells = 00000001
+        #size-cells = 00000001
+      }
+    }
+    ethernet@e000b000 {
+      compatible = 'cdns,zynq-gem\x00cdns,gem'
+      reg = e000b000 00001000
+      status = 'okay'
+      interrupts = 00000000 00000016 00000004
+      clocks = 00000001 0000001e 00000001 0000001e 00000001 0000000d
+      clock-names = 'pclk\x00hclk\x00tx_clk'
+      #address-cells = 00000001
+      #size-cells = ''
+      phy-mode = 'gmii'
+      xlnx,ptp-enet-clock = 069f6bcb
+      local-mac-address = 000a35001e53
+    }
+    ethernet@e000c000 {
+      compatible = 'cdns,zynq-gem\x00cdns,gem'
+      reg = e000c000 00001000
+      status = 'disabled'
+      interrupts = 00000000 0000002d 00000004
+      clocks = 00000001 0000001f 00000001 0000001f 00000001 0000000e
+      clock-names = 'pclk\x00hclk\x00tx_clk'
+      #address-cells = 00000001
+      #size-cells = ''
+    }
+    mmc@e0100000 {
+      compatible = 'arasan,sdhci-8.9a'
+      status = 'okay'
+      clock-names = 'clk_xin\x00clk_ahb'
+      clocks = 00000001 00000015 00000001 00000020
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000018 00000004
+      reg = e0100000 00001000
+      xlnx,has-cd = 00000001
+      xlnx,has-power = ''
+      xlnx,has-wp = ''
+    }
+    mmc@e0101000 {
+      compatible = 'arasan,sdhci-8.9a'
+      status = 'disabled'
+      clock-names = 'clk_xin\x00clk_ahb'
+      clocks = 00000001 00000016 00000001 00000021
+      interrupt-parent = 00000004
+      interrupts = 00000000 0000002f 00000004
+      reg = e0101000 00001000
+    }
+    slcr@f8000000 {
+      u-boot,dm-pre-reloc = 
+      #address-cells = 00000001
+      #size-cells = 00000001
+      compatible = 'xlnx,zynq-slcr\x00syscon\x00simple-mfd'
+      reg = f8000000 00001000
+      ranges = 
+      phandle = 00000005
+      clkc@100 {
+        u-boot,dm-pre-reloc = 
+        #clock-cells = 00000001
+        compatible = 'xlnx,ps7-clkc'
+        fclk-enable = 00000001
+        clock-output-names = 'armpll\x00ddrpll\x00iopll\x00cpu_6or4x\x00cpu_3or2x\x00cpu_2x\x00cpu_1x\x00ddr2x\x00ddr3x\x00dci\x00lqspi\x00smc\x00pcap\x00gem0\x00gem1\x00fclk0\x00fclk1\x00fclk2\x00fclk3\x00can0\x00can1\x00sdio0\x00sdio1\x00uart0\x00uart1\x00spi0\x00spi1\x00dma\x00usb0_aper\x00usb1_aper\x00gem0_aper\x00gem1_aper\x00sdio0_aper\x00sdio1_aper\x00spi0_aper\x00spi1_aper\x00can0_aper\x00can1_aper\x00i2c0_aper\x00i2c1_aper\x00uart0_aper\x00uart1_aper\x00gpio_aper\x00lqspi_aper\x00smc_aper\x00swdt\x00dbg_trc\x00dbg_apb'
+        reg = 00000100 00000100
+        ps-clk-frequency = 01fca055
+        phandle = 00000001
+      }
+      rstc@200 {
+        compatible = 'xlnx,zynq-reset'
+        reg = 00000200 00000048
+        #reset-cells = 00000001
+        syscon = 00000005
+      }
+      pinctrl@700 {
+        compatible = 'xlnx,pinctrl-zynq'
+        reg = 00000700 00000200
+        syscon = 00000005
+      }
+    }
+    dmac@f8003000 {
+      compatible = 'arm,pl330\x00arm,primecell'
+      reg = f8003000 00001000
+      interrupt-parent = 00000004
+      interrupt-names = 'abort\x00dma0\x00dma1\x00dma2\x00dma3\x00dma4\x00dma5\x00dma6\x00dma7'
+      interrupts = 00000000 0000000d 00000004 00000000 0000000e 00000004 00000000 0000000f 00000004 00000000 00000010 00000004 00000000 00000011 00000004 00000000 00000028 00000004 00000000 00000029 00000004 00000000 0000002a 00000004 00000000 0000002b 00000004
+      #dma-cells = 00000001
+      #dma-channels = 00000008
+      #dma-requests = 00000004
+      clocks = 00000001 0000001b
+      clock-names = 'apb_pclk'
+    }
+    devcfg@f8007000 {
+      compatible = 'xlnx,zynq-devcfg-1.0'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000008 00000004
+      reg = f8007000 00000100
+      clocks = 00000001 0000000c 00000001 0000000f 00000001 00000010 00000001 00000011 00000001 00000012
+      clock-names = 'ref_clk\x00fclk0\x00fclk1\x00fclk2\x00fclk3'
+      syscon = 00000005
+      phandle = 00000003
+    }
+    efuse@f800d000 {
+      compatible = 'xlnx,zynq-efuse'
+      reg = f800d000 00000020
+    }
+    timer@f8f00200 {
+      compatible = 'arm,cortex-a9-global-timer'
+      reg = f8f00200 00000020
+      interrupts = 00000001 0000000b 00000301
+      interrupt-parent = 00000004
+      clocks = 00000001 00000004
+    }
+    timer@f8001000 {
+      interrupt-parent = 00000004
+      interrupts = 00000000 0000000a 00000004 00000000 0000000b 00000004 00000000 0000000c 00000004
+      compatible = 'cdns,ttc'
+      clocks = 00000001 00000006
+      reg = f8001000 00001000
+    }
+    timer@f8002000 {
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000025 00000004 00000000 00000026 00000004 00000000 00000027 00000004
+      compatible = 'cdns,ttc'
+      clocks = 00000001 00000006
+      reg = f8002000 00001000
+    }
+    timer@f8f00600 {
+      interrupt-parent = 00000004
+      interrupts = 00000001 0000000d 00000301
+      compatible = 'arm,cortex-a9-twd-timer'
+      reg = f8f00600 00000020
+      clocks = 00000001 00000004
+    }
+    usb@e0002000 {
+      compatible = 'xlnx,zynq-usb-2.20a\x00chipidea,usb2'
+      status = 'disabled'
+      clocks = 00000001 0000001c
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000015 00000004
+      reg = e0002000 00001000
+      phy_type = 'ulpi'
+    }
+    usb@e0003000 {
+      compatible = 'xlnx,zynq-usb-2.20a\x00chipidea,usb2'
+      status = 'disabled'
+      clocks = 00000001 0000001d
+      interrupt-parent = 00000004
+      interrupts = 00000000 0000002c 00000004
+      reg = e0003000 00001000
+      phy_type = 'ulpi'
+    }
+    watchdog@f8005000 {
+      clocks = 00000001 0000002d
+      compatible = 'cdns,wdt-r1p2'
+      interrupt-parent = 00000004
+      interrupts = 00000000 00000009 00000001
+      reg = f8005000 00001000
+      timeout-sec = 0000000a
+    }
+  }
+  chosen {
+    bootargs = 'console=ttyPS0,115200 earlycon root=mtd:jffs2 rw rootfstype=jffs2'
+    stdout-path = 'serial0:115200n8'
+  }
+  aliases {
+    ethernet0 = '/amba/ethernet@e000b000'
+    i2c0 = '/amba/i2c@e0004000'
+    i2c1 = '/amba/i2c@e0005000'
+    serial0 = '/amba/serial@e0001000'
+    serial1 = '/amba/serial@e0000000'
+    spi0 = '/amba/spi@e0006000'
+    spi1 = '/amba/spi@e0007000'
+  }
+  memory {
+    device_type = 'memory'
+    reg = 00000000 10000000
+  }
+}

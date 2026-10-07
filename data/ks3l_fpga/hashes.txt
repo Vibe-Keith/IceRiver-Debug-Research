@@ -1,0 +1,4 @@
+9856cca1bb9b33a3037fcc9041548ffa  BOOT2_0.BIN
+7f7ab9627cf08087b4af037c6457c00e  part0_zynq_fsbl.elf
+1eabd0db61a26d8ef9747cf255ec2f4d  part1_ebaz4205_wrapper.bit
+80b554add082968f1df78c76acaa9f41  part2_u-boot.elf

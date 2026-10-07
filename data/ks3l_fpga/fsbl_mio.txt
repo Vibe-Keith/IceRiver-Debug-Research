@@ -1,0 +1,58 @@
+== table at 0x12fa4, 54 entries
+== table at 0x13d20, 54 entries
+== table at 0x14a7c, 54 entries
+MIO0  1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO1  1600  GPIO                   IO=3 pu=1
+MIO2  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO3  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO4  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO5  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO6  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO7  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO8  0610  L2=2(NAND/SRAM)        IO=3 pu=0
+MIO9  1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO10 1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO11 1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO12 1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO13 1610  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO14 1611  L2=2(NAND/SRAM)        IO=3 pu=1
+MIO15 1600  GPIO                   IO=3 pu=1
+MIO16 1600  GPIO                   IO=3 pu=1
+MIO17 1600  GPIO                   IO=3 pu=1
+MIO18 1600  GPIO                   IO=3 pu=1
+MIO19 1600  GPIO                   IO=3 pu=1
+MIO20 1600  GPIO                   IO=3 pu=1
+MIO21 1600  GPIO                   IO=3 pu=1
+MIO22 1600  GPIO                   IO=3 pu=1
+MIO23 1600  GPIO                   IO=3 pu=1
+MIO24 16e0  UART1 TX               IO=3 pu=1
+MIO25 16e1  UART1 RX               IO=3 pu=1
+MIO26 1600  GPIO                   IO=3 pu=1
+MIO27 1600  GPIO                   IO=3 pu=1
+MIO28 1600  GPIO                   IO=3 pu=1
+MIO29 1600  GPIO                   IO=3 pu=1
+MIO30 1640  I2C0 SCL               IO=3 pu=1
+MIO31 1640  I2C0 SDA               IO=3 pu=1
+MIO32 1600  GPIO                   IO=3 pu=1
+MIO33 1600  GPIO                   IO=3 pu=1
+MIO34 1601  GPIO (tri)             IO=3 pu=1
+MIO35 1600  GPIO                   IO=3 pu=1
+MIO36 1600  GPIO                   IO=3 pu=1
+MIO37 1600  GPIO                   IO=3 pu=1
+MIO38 1600  GPIO                   IO=3 pu=1
+MIO39 1600  GPIO                   IO=3 pu=1
+MIO40 1680  SDIO                   IO=3 pu=1
+MIO41 1680  SDIO                   IO=3 pu=1
+MIO42 1680  SDIO                   IO=3 pu=1
+MIO43 1680  SDIO                   IO=3 pu=1
+MIO44 1680  SDIO                   IO=3 pu=1
+MIO45 1680  SDIO                   IO=3 pu=1
+MIO46 1600  GPIO                   IO=3 pu=1
+MIO47 1600  GPIO                   IO=3 pu=1
+MIO48 1600  GPIO                   IO=3 pu=1
+MIO49 1600  GPIO                   IO=3 pu=1
+MIO50 1600  GPIO                   IO=3 pu=1
+MIO51 1600  GPIO                   IO=3 pu=1
+MIO52 1600  GPIO                   IO=3 pu=1
+MIO53 1600  GPIO                   IO=3 pu=1
+all copies identical: True
